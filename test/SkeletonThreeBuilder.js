@@ -67,6 +67,7 @@ describe('SkeletonThreeBuilder', function () {
       this.rootJoint = this.skeleton.joints.get('root')
       this.spineJoint = this.skeleton.joints.get('spine')
       SkeletonThreeBuilder.run(this.skeleton) // fill renderables
+      this.spineJoint.renderable.parent = null
       this.result = SkeletonThreeBuilder.setRenderableParent(this.spineJoint)
     })
 
@@ -74,8 +75,13 @@ describe('SkeletonThreeBuilder', function () {
       expect(this.result).to.eq(true)
     })
 
+    it('sets the parent renderable', function () {
+      expect(this.spineJoint.renderable.parent).to.eq(this.rootJoint.renderable)
+    })
+
     context('when renderable is missing', function () {
       before(function () {
+        this.spineJoint.renderable.parent = null
         sinon.stub(console, 'warn')
       })
 
@@ -102,6 +108,10 @@ describe('SkeletonThreeBuilder', function () {
         it('logs a warning', function () {
           expect(console.warn).to.have.been.calledWith('SkeletonThreeBuilder.setRenderableParent: joint [spine] does not have a renderable')
         })
+
+        it('does not set the parent renderable', function () {
+          expect(this.renderable.parent).to.eq(null)
+        })
       })
 
       context('from parent', function () {
@@ -121,6 +131,10 @@ describe('SkeletonThreeBuilder', function () {
 
         it('logs a warning', function () {
           expect(console.warn).to.have.been.calledWith('SkeletonThreeBuilder.setRenderableParent: parent joint [root] does not have a renderable')
+        })
+
+        it('does not set the parent renderable', function () {
+          expect(this.spineJoint.renderable.parent).to.eq(null)
         })
       })
     })
