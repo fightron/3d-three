@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/fightron/skeleton-skeleton#readme",
   "dependencies": {
-    "@fightron/skeleton": "github:fightron/skeleton-js#0.1.0",
+    "@fightron/skeleton": "github:fightron/skeleton-js#0.1.1",
     "three": "0.132.2"
   },
   "devDependencies": {
