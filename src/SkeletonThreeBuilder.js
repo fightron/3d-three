@@ -36,7 +36,7 @@ export class SkeletonThreeBuilder {
       bone = this.buildBone(joint)
       joint.renderable = bone
 
-      this.setRenderableParent(joint, skeleton)
+      this.setRenderableParent(joint)
 
       bones.push(bone)
     }
@@ -68,18 +68,13 @@ export class SkeletonThreeBuilder {
    * This requires the renderables to be set in both parent and child joints.
    *
    * @param {Joint} joint
-   * @param {Skeleton} skeleton - Used to find the parent joint.
    *
    * @returns {boolean} - Returns `true` if a parent was set.
    */
-  static setRenderableParent (joint, skeleton) {
-    var parentName = joint.definition.parent
-    if (!parentName) return false
-
-    var parentJoint = skeleton.joints.get(parentName)
+  static setRenderableParent (joint) {
+    var parentJoint = joint.parent
 
     if (!parentJoint) {
-      console.warn(`SkeletonThreeBuilder.setRenderableParent: parent joint [${parentName}] not found`)
       return false
     }
 
@@ -95,11 +90,11 @@ export class SkeletonThreeBuilder {
     var parentRenderable = parentJoint.renderable
 
     if (!parentRenderable) {
-      console.warn(`SkeletonThreeBuilder.setRenderableParent: parent joint [${parentName}] does not have a renderable`)
+      console.warn(`SkeletonThreeBuilder.setRenderableParent: parent joint [${parentJoint.definition.name}] does not have a renderable`)
       return false
     }
 
-    parentRenderable.add(renderable)
+    renderable.parent = parentRenderable
 
     return true
   }
