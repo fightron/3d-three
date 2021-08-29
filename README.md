@@ -8,7 +8,7 @@
 
 ```javascript
 import { Skeleton } from '@fightron/skeleton'
-import { SkeletonThreeBuilder } from '@fightron/skeleton-three'
+import SkeletonThreeBuilder from '@fightron/skeleton-three'
 
 var skeleton = new Skeleton(/* ... */)
 
@@ -29,5 +29,5 @@ pose.apply(skeleton)
 
 // You can also directly manipulate the renderable:
 var skeleton3 = skeleton.renderable // THREE.Skeleton
-skeleton.bones[1].rotation.y = 0.4
+skeleton3.bones[1].rotation.y = 0.4
 ```
