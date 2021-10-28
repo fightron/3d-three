@@ -22,12 +22,12 @@
   "homepage": "https://github.com/fightron/skeleton-skeleton#readme",
   "dependencies": {
     "@fightron/skeleton": "github:fightron/skeleton-js#0.1.1",
-    "three": "0.132.2"
+    "three": "0.134.0"
   },
   "devDependencies": {
     "@dimensionalpocket/development": "github:dimensionalpocket/development-js#0.4.0",
     "@dimensionalpocket/release": "github:dimensionalpocket/release-js#0.2.0",
-    "@types/three": "0.131.0"
+    "@types/three": "0.133.1"
   },
   "babel": {
     "extends": "./node_modules/@dimensionalpocket/development/babel"
