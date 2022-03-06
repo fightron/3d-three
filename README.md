@@ -1,21 +1,25 @@
-# @fightron/skeleton-three
+# @fightron/3d-three
 
-[![build](https://github.com/fightron/skeleton-three/actions/workflows/node.js.yml/badge.svg)](https://github.com/fightron/skeleton-three/actions/workflows/node.js.yml) [![Total alerts](https://img.shields.io/lgtm/alerts/g/fightron/skeleton-three.svg)](https://lgtm.com/projects/g/fightron/skeleton-three/alerts/) [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/fightron/skeleton-three.svg)](https://lgtm.com/projects/g/fightron/skeleton-three/context:javascript)
+[![build](https://github.com/fightron/3d-three/actions/workflows/node.js.yml/badge.svg)](https://github.com/fightron/3d-three/actions/workflows/node.js.yml) [![Total alerts](https://img.shields.io/lgtm/alerts/g/fightron/3d-three.svg)](https://lgtm.com/projects/g/fightron/3d-three/alerts/) [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/fightron/3d-three.svg)](https://lgtm.com/projects/g/fightron/3d-three/context:javascript)
 
-[THREE](https://github.com/mrdoob/three.js) wrapper around [@fightron/skeleton](https://github.com/fightron/skeleton-js).
+[THREE](https://github.com/mrdoob/three.js) renderer for [@fightron/3d](https://github.com/fightron/3d-js).
 
 ## Usage
 
 ```javascript
-import { Skeleton } from '@fightron/skeleton'
-import SkeletonThreeBuilder from '@fightron/skeleton-three'
+import { Skeleton } from '@fightron/3d'
+import { ThreeRenderer } from '@fightron/3d-three'
 
 var skeleton = new Skeleton(/* ... */)
+
+// ThreeRenderer requires a canvas element to render on.
+var canvas = document.getElementById(...)
+var renderer = new ThreeRenderer(canvas)
 
 // This will build skeleton.renderable,
 // which will be a THREE.Skeleton instance
 // with a collection of THREE.Bone instances.
-SkeletonThreeBuilder.run(skeleton)
+renderer.setSkeletonRenderable(skeleton)
 
 // After building the renderable, you can then
 // manipulate the joints, and the renderable
