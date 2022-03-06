@@ -21,13 +21,15 @@
   },
   "homepage": "https://github.com/fightron/skeleton-skeleton#readme",
   "dependencies": {
-    "@fightron/skeleton": "github:fightron/skeleton-js#0.1.1",
-    "three": "0.132.2"
+    "@fightron/3d": "github:fightron/3d-js#renderer",
+    "three": "0.138.3"
   },
   "devDependencies": {
-    "@dimensionalpocket/development": "github:dimensionalpocket/development-js#0.4.0",
-    "@dimensionalpocket/release": "github:dimensionalpocket/release-js#0.2.0",
-    "@types/three": "0.131.0"
+    "@dimensionalpocket/development": "github:dimensionalpocket/development-js#0.4.2",
+    "@dimensionalpocket/release": "github:dimensionalpocket/release-js#0.2.3",
+    "@types/three": "0.138.0",
+    "canvas": "2.9.0",
+    "jsdom": "19.0.0"
   },
   "babel": {
     "extends": "./node_modules/@dimensionalpocket/development/babel"

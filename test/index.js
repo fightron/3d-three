@@ -4,11 +4,11 @@
 
 import { expect } from '@dimensionalpocket/development'
 
-import SkeletonThreeBuilder from '../index.js'
-import { SkeletonThreeBuilder as SkeletonThreeBuilderFromSrc } from '../src/SkeletonThreeBuilder.js'
+import { ThreeRenderer } from '../index.js'
+import { ThreeRenderer as ThreeRendererFromSrc } from '../src/ThreeRenderer.js'
 
 describe('main require', function () {
-  it('exports SkeletonThreeBuilder from src', function () {
-    expect(SkeletonThreeBuilder).to.equal(SkeletonThreeBuilderFromSrc)
+  it('exports ThreeRenderer from src', function () {
+    expect(ThreeRenderer).to.equal(ThreeRendererFromSrc)
   })
 })
