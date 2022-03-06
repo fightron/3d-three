@@ -1,3 +1,1 @@
-import { SkeletonThreeBuilder } from './src/SkeletonThreeBuilder.js'
-
-export default SkeletonThreeBuilder
+export { ThreeRenderer } from './src/ThreeRenderer.js'
