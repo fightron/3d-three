@@ -1,7 +1,7 @@
 {
-  "name": "@fightron/skeleton-three",
+  "name": "@fightron/3d-three",
   "version": "0.0.0",
-  "description": "Three wrapper for @fightron/skeleton-js",
+  "description": "Three wrapper for @fightron/3d-js",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -12,21 +12,24 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fightron/skeleton-skeleton.git"
+    "url": "git+https://github.com/fightron/3d-three.git"
   },
   "author": "fightron.com",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/fightron/skeleton-skeleton/issues"
+    "url": "https://github.com/fightron/3d-three/issues"
   },
-  "homepage": "https://github.com/fightron/skeleton-skeleton#readme",
+  "homepage": "https://github.com/fightron/3d-three#readme",
   "dependencies": {
-    "@fightron/3d": "github:fightron/3d-js#renderer",
     "three": "0.138.3"
   },
+  "peerDependencies": {
+    "@fightron/3d": "github:fightron/3d-js#semver:0.x"
+  },
   "devDependencies": {
-    "@dimensionalpocket/development": "github:dimensionalpocket/development-js#0.4.2",
-    "@dimensionalpocket/release": "github:dimensionalpocket/release-js#0.2.3",
+    "@dimensionalpocket/development": "github:dimensionalpocket/development-js#0.5.2",
+    "@dimensionalpocket/release": "github:dimensionalpocket/release-js#0.2.4",
+    "@fightron/3d": "github:fightron/3d-js#main",
     "@types/three": "0.138.0",
     "canvas": "2.9.0",
     "jsdom": "19.0.0"
@@ -43,7 +46,7 @@
     "colors": true
   },
   "c8": {
-    "all": true,
+    "extends": "./node_modules/@dimensionalpocket/development/c8/default.json",
     "include": [
       "index.js",
       "src"
