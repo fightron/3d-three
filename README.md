@@ -35,3 +35,7 @@ pose.apply(skeleton)
 var skeleton3 = skeleton.renderable // THREE.Skeleton
 skeleton3.bones[1].rotation.y = 0.4
 ```
+
+## License
+
+MIT
