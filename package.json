@@ -27,7 +27,7 @@
     "@fightron/3d": "github:fightron/3d-js#semver:0.x"
   },
   "devDependencies": {
-    "@dimensionalpocket/development": "github:dimensionalpocket/development-js#0.5.2",
+    "@dimensionalpocket/development": "github:dimensionalpocket/development-js#0.5.3",
     "@dimensionalpocket/release": "github:dimensionalpocket/release-js#0.2.4",
     "@fightron/3d": "github:fightron/3d-js#main",
     "@types/three": "0.138.0",
